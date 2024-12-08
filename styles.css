@@ -1,90 +1,106 @@
+/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Open Sans', sans-serif; /* Clean sans-serif font */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #f7f7f7; /* Light background */
+    color: #333;
 }
 
+h1, h2 {
+    font-family: 'Merriweather', serif; /* Elegant serif font */
+    color: #333;
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+/* Header */
 header {
-    background-color: #333;
+    background: linear-gradient(to right, #ff7f50, #6a0dad); /* Gradient background */
     color: white;
-    padding: 15px 0;
+    padding: 20px;
     text-align: center;
 }
 
 header nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
 header nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin-right: 20px;
 }
 
 header nav ul li a {
     color: white;
-    text-decoration: none;
     font-weight: bold;
+    text-decoration: none;
+    font-size: 18px;
 }
 
-h1 {
-    font-size: 2rem;
+/* Call to Action Buttons */
+.cta-button {
+    background-color: #ff7f50; /* Primary color */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
 }
 
+.cta-button:hover {
+    background-color: #6a0dad; /* Change color on hover */
+}
+
+/* Main Section */
 section {
-    padding: 30px;
+    padding: 40px 0;
     text-align: center;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
 h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 20px;
 }
 
-.cta-button {
-    background-color: #ff7f50;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    margin-top: 20px;
+p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+/* Service Cards */
+.card {
     display: inline-block;
+    width: 28%;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation */
 }
 
-form {
-    margin-top: 20px;
-    text-align: left;
+.card:hover {
+    transform: translateY(-5px); /* Lift the card on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow */
 }
 
-input, textarea {
-    padding: 10px;
-    font-size: 16px;
-    margin-top: 10px;
-    width: 100%;
-    max-width: 500px;
-    margin-bottom: 20px;
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
 }
 
-button {
-    background-color: #333;
-    color: white;
-    padding: 12px 20px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
+.card p {
+    font-size: 1rem;
 }
 
-button:hover {
-    background-color: #444;
-}
-
+/* Table Styling for Test Results */
 table {
     width: 100%;
     margin-top: 20px;
@@ -96,14 +112,35 @@ table, th, td {
 }
 
 th, td {
-    padding: 10px;
+    padding: 15px;
     text-align: left;
 }
 
+th {
+    background-color: #f2f2f2;
+}
+
+/* Footer */
 footer {
     background-color: #333;
     color: white;
-    padding: 10px 0;
+    padding: 20px;
     text-align: center;
-    margin-top: 50px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+        margin: 10px 0;
+    }
 }
