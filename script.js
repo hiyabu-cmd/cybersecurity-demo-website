@@ -1,20 +1,33 @@
-// Get elements
-const introSection = document.getElementById('intro');
-const contentSection = document.getElementById('content');
-const findOutMoreButton = document.getElementById('findOutMore');
+<script>
+    // Function to simulate the cybersecurity test and show results
+    function runTest() {
+        const url = document.getElementById('url').value.trim();
+        if (url) {
+            document.getElementById('results').style.display = 'block';
 
-// When the user clicks the "Find Out More" button
-findOutMoreButton.addEventListener('click', function (e) {
-    e.preventDefault();
-    // Fade out the intro section and slide in content section
-    introSection.style.opacity = '0';
-    contentSection.style.opacity = '1';
-});
-
-// Optional: If you want to trigger the transition on scroll instead of click
-window.addEventListener('scroll', function () {
-    if (window.scrollY > 50) {
-        introSection.style.opacity = '0';
-        contentSection.style.opacity = '1';
+            // Mock the results
+            document.getElementById('portResult').innerText = 'Pass';
+            document.getElementById('httpResult').innerText = 'Fail';
+            document.getElementById('httpMaliciousResult').innerText = 'Pass';
+            document.getElementById('httpsResult').innerText = 'Pass';
+            document.getElementById('httpsMaliciousResult').innerText = 'Fail';
+        } else {
+            alert("Please enter a valid URL.");
+        }
     }
-});
+
+    // Smooth scrolling function when clicking on navigation links or buttons
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            targetSection.scrollIntoView({
+                behavior: 'smooth',   // Enables smooth scrolling
+                block: 'start'        // Aligns the section at the top
+            });
+        });
+    });
+</script>
