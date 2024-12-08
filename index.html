@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Local Cybersecurity Partner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+    <div class="container">
+        <h1>Your Local Cybersecurity Partner</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#digitalization">Digitalization</a></li>
+                <li><a href="#cybersecurity">Cybersecurity Testing</a></li>
+                <li><a href="#talent">Young Talent</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Section -->
+<section id="home" class="container">
+    <h2>Helping Mittelstand Businesses Thrive</h2>
+    <p>We offer digitalization assistance, cybersecurity testing, and talent acquisition for local businesses in Germany. Let us help you grow again.</p>
+    <a href="#cybersecurity" class="cta-button">Check Your Cybersecurity</a>
+    <a href="#digitalization" class="cta-button">Get Digitalized</a>
+</section>
+
+<!-- Digitalization Service -->
+<section id="digitalization" class="container">
+    <h2>Get Your Business Online</h2>
+    <p>We help businesses with zero digital presence get online and reach new customers. Book an appointment to learn how.</p>
+    <a href="#contact" class="cta-button">Book a Free Consultation</a>
+</section>
+
+<!-- Cybersecurity Testing -->
+<section id="cybersecurity" class="container">
+    <h2>Test Your Website's Cybersecurity</h2>
+    <p>Want to know if your website is secure? Enter your URL below to test for vulnerabilities.</p>
+
+    <!-- Form for URL input -->
+    <form id="cybersecurity-form">
+        <label for="url">Enter Website URL:</label>
+        <input type="text" id="url" placeholder="www.example.com" required>
+        <button type="button" onclick="runTest()">Run Test</button>
+    </form>
+
+    <!-- Mock Results -->
+    <div id="results" style="display:none;">
+        <h3>Test Results</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Test</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Port Test (DDoS)</td>
+                    <td id="portResult">Pass</td>
+                </tr>
+                <tr>
+                    <td>HTTP Methods Test (HTTP)</td>
+                    <td id="httpResult">Fail</td>
+                </tr>
+                <tr>
+                    <td>Malicious Headers Test (HTTP)</td>
+                    <td id="httpMaliciousResult">Pass</td>
+                </tr>
+                <tr>
+                    <td>HTTP Methods Test (HTTPS)</td>
+                    <td id="httpsResult">Pass</td>
+                </tr>
+                <tr>
+                    <td>Malicious Headers Test (HTTPS)</td>
+                    <td id="httpsMaliciousResult">Fail</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>If you pass the test and book an appointment with us, you could get a reward!</p>
+    </div>
+</section>
+
+<!-- Young Talent Section -->
+<section id="talent" class="container">
+    <h2>Connect with Young Talent</h2>
+    <p>Help secure your business's future by mentoring young talent and ensuring a smooth business transition. Learn how we can help you.</p>
+    <a href="#contact" class="cta-button">Find Young Talent</a>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="container">
+    <h2>Contact Us</h2>
+    <form action="#">
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" required placeholder="yourname@example.com">
+        <label for="message">Message:</label>
+        <textarea id="message" placeholder="Write your message here..."></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- JavaScript for Testing -->
+<script>
+    function runTest() {
+        const url = document.getElementById('url').value.trim();
+        if (url) {
+            document.getElementById('results').style.display = 'block';
+
+            // Mock the results
+            document.getElementById('portResult').innerText = 'Pass';
+            document.getElementById('httpResult').innerText = 'Fail';
+            document.getElementById('httpMaliciousResult').innerText = 'Pass';
+            document.getElementById('httpsResult').innerText = 'Pass';
+            document.getElementById('httpsMaliciousResult').innerText = 'Fail';
+        } else {
+            alert("Please enter a valid URL.");
+        }
+    }
+</script>
+
+</body>
+</html>
