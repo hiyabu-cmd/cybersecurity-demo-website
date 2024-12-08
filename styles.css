@@ -8,57 +8,35 @@ body {
     transition: all 0.3s ease;
 }
 
-h1, h2 {
-    font-family: 'Merriweather', serif;
-    color: #333;
-}
-
-/* Header */
-header {
-    background: linear-gradient(to right, #ff7f50, #6a0dad); 
-    color: white;
-    padding: 40px 0;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-header nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin-right: 30px;
-}
-
-header nav ul li a {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Hero Section */
+/* Full-screen Hero Section with Gradient */
 .hero {
-    background: #fff;
+    background: linear-gradient(to right, #ff7f50, #6a0dad); /* Gradient */
+    color: white;
     padding: 100px 0;
     text-align: center;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     animation: fadeIn 1s ease-out;
 }
 
+.hero-content {
+    max-width: 800px;
+}
+
 h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards; /* Animation for title */
 }
 
 p {
     font-size: 1.2rem;
     margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out forwards;
 }
 
 .cta-container {
@@ -83,26 +61,39 @@ p {
     transform: scale(1.05);
 }
 
-/* Service Section */
-.service-section {
-    padding: 60px 0;
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollable Sections */
+section {
+    padding: 60px 20px;
     text-align: center;
-    transition: all 0.3s ease-in-out;
+    animation: fadeInUp 1s ease-out forwards; /* Animation for scrolling sections */
 }
 
-.service-section:hover {
-    background-color: #f8f8f8;
+.service-section {
+    background-color: #fff;
+    padding: 50px 0;
+    margin-top: 20px;
+    border-radius: 8px;
 }
 
-/* Card-like Service Section */
-.service-section h2 {
+h2 {
     font-size: 2rem;
     margin-bottom: 20px;
 }
 
-.service-section p {
+p {
     font-size: 1.1rem;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .service-section .cta-button {
@@ -111,40 +102,12 @@ p {
     border-radius: 8px;
 }
 
-/* Test Results Table */
-table {
-    width: 80%;
-    margin-top: 20px;
-    border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 18px;
-    text-align: left;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-/* Footer */
+/* Contact Section */
 footer {
     background-color: #333;
     color: white;
     padding: 30px 0;
     text-align: center;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
 }
 
 /* Responsive Design */
@@ -153,7 +116,7 @@ footer {
         flex-direction: column;
     }
 
-    .service-section {
-        padding: 40px 0;
+    .hero h2 {
+        font-size: 2.5rem;
     }
 }
